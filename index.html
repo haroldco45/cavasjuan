@@ -11,15 +11,15 @@
         .accent-yellow { color: #facc15; }
         .bg-yellow-juan { background-color: #facc15; }
         .card { background: rgba(255, 255, 255, 0.05); border-radius: 15px; padding: 20px; border: 1px solid #333; }
-        input[type="number"] { background: #333; color: white; border: 1px solid #facc15; border-radius: 5px; padding: 5px; width: 65px; text-align: center; }
-        .logo-vibras { font-size: 0.8rem; color: #888; text-align: center; margin-top: 20px; border-top: 1px solid #444; padding-top: 15px; }
+        input[type="number"] { background: #333; color: white; border: 1px solid #facc15; border-radius: 5px; padding: 5px; width: 65px; text-align: center; font-weight: bold; }
+        .logo-vibras { font-size: 0.85rem; color: #aaa; text-align: center; margin-top: 30px; border-top: 1px dashed #444; padding-top: 15px; }
     </style>
 </head>
 <body class="p-4 pb-20">
 
     <header class="text-center mb-6">
         <h1 class="text-4xl font-bold accent-yellow italic">CAVAS JUAN</h1>
-        <p class="text-sm tracking-widest uppercase">Domicilio Totalmente Gratis</p>
+        <p class="text-sm tracking-widest uppercase font-bold">Domicilio Totalmente Gratis</p>
         <p class="text-xs mt-1">Caucasia, Antioquia</p>
     </header>
 
@@ -29,9 +29,9 @@
             <h2 class="text-xl font-bold mb-4 border-b border-yellow-500 pb-2 italic">Datos de Entrega</h2>
             <div class="grid grid-cols-1 gap-3">
                 <input type="text" id="nombre" placeholder="Nombre completo" class="w-full p-3 rounded bg-zinc-800 border border-zinc-700 focus:outline-none focus:border-yellow-500">
-                <input type="text" id="direccion" placeholder="Dirección de entrega" class="w-full p-3 rounded bg-zinc-800 border border-zinc-700 focus:outline-none focus:border-yellow-500">
+                <input type="text" id="direccion" placeholder="Dirección exacta" class="w-full p-3 rounded bg-zinc-800 border border-zinc-700 focus:outline-none focus:border-yellow-500">
                 <input type="tel" id="celular" placeholder="Número de celular" class="w-full p-3 rounded bg-zinc-800 border border-zinc-700 focus:outline-none focus:border-yellow-500">
-                <textarea id="observaciones" placeholder="Observaciones (Barrio, color de casa, etc.)" class="w-full p-3 rounded bg-zinc-800 border border-zinc-700 focus:outline-none focus:border-yellow-500"></textarea>
+                <textarea id="observaciones" placeholder="Observaciones (Barrio, color de casa...)" class="w-full p-3 rounded bg-zinc-800 border border-zinc-700 focus:outline-none focus:border-yellow-500"></textarea>
             </div>
         </section>
 
@@ -40,12 +40,20 @@
                 <h2 class="text-xl font-bold border-b border-yellow-500 pb-2 italic">Arma tu Cava</h2>
                 <span id="contador-total" class="bg-yellow-juan text-black px-3 py-1 rounded-full font-bold">0 Unidades</span>
             </div>
-            <p class="text-[10px] mb-4 text-zinc-400 font-bold text-center italic">Solo Costeñita: 38 unds | Mezclas u otras: 30 unds</p>
+            <p class="text-[10px] mb-4 text-zinc-400 font-bold uppercase text-center italic">Solo Costeñita: 38 unds | Combinadas u otras: 30 unds</p>
 
             <div class="space-y-3" id="lista-productos">
                 <div class="flex justify-between items-center bg-zinc-800 p-3 rounded">
-                    <span class="font-bold">Aguila Light</span>
-                    <input type="number" class="cant-cerveza" data-nombre="Aguila Light" value="0" min="0" onchange="calcular()">
+                    <span class="font-bold">Coronita</span>
+                    <input type="number" class="cant-cerveza" data-nombre="Coronita" value="0" min="0" onchange="calcular()">
+                </div>
+                <div class="flex justify-between items-center bg-zinc-800 p-3 rounded">
+                    <span class="font-bold">Costeña Bacana</span>
+                    <input type="number" class="cant-cerveza" data-nombre="Costeña Bacana" value="0" min="0" onchange="calcular()">
+                </div>
+                <div class="flex justify-between items-center bg-zinc-800 p-3 rounded border-l-4 border-yellow-500">
+                    <span class="font-bold text-yellow-500">Costeñita (38 unds)</span>
+                    <input type="number" class="cant-cerveza" data-nombre="Costeñita" value="0" min="0" onchange="calcular()">
                 </div>
                 <div class="flex justify-between items-center bg-zinc-800 p-3 rounded">
                     <span class="font-bold">Aguila Original</span>
@@ -55,24 +63,16 @@
                     <span class="font-bold">Aguila Negra</span>
                     <input type="number" class="cant-cerveza" data-nombre="Aguila Negra" value="0" min="0" onchange="calcular()">
                 </div>
-                <div class="flex justify-between items-center bg-zinc-800 p-3 rounded border-l-4 border-yellow-500">
-                    <span class="font-bold text-yellow-500">Costeñita (38 unds)</span>
-                    <input type="number" class="cant-cerveza" data-nombre="Costeñita" value="0" min="0" onchange="calcular()">
-                </div>
                 <div class="flex justify-between items-center bg-zinc-800 p-3 rounded">
-                    <span class="font-bold">Costeña Bacana</span>
-                    <input type="number" class="cant-cerveza" data-nombre="Costeña Bacana" value="0" min="0" onchange="calcular()">
-                </div>
-                <div class="flex justify-between items-center bg-zinc-800 p-3 rounded">
-                    <span class="font-bold">Coronita</span>
-                    <input type="number" class="cant-cerveza" data-nombre="Coronita" value="0" min="0" onchange="calcular()">
+                    <span class="font-bold">Aguila Light</span>
+                    <input type="number" class="cant-cerveza" data-nombre="Aguila Light" value="0" min="0" onchange="calcular()">
                 </div>
             </div>
         </section>
 
         <div class="card bg-yellow-juan text-black shadow-xl">
-            <div class="flex justify-between items-center">
-                <span class="font-black text-lg">TOTAL A PAGAR:</span>
+            <div class="flex justify-between items-center text-center">
+                <span class="font-black text-lg">VALOR CAVA:</span>
                 <span class="text-3xl font-black" id="total-precio">$0</span>
             </div>
         </div>
@@ -82,8 +82,8 @@
         </button>
 
         <div class="logo-vibras">
-            <p class="font-bold">DESARROLLADO POR VIBRAS POSITIVAS ©</p>
-            <p>Soporte: 3117700431</p>
+            <p class="font-bold text-white">App desarrollada por VIBRAS POSITIVAS ©</p>
+            <p>Derechos de Autor: <span class="accent-yellow">3117700431</span></p>
         </div>
     </div>
 
@@ -91,75 +91,82 @@
         let latitud = "";
         let longitud = "";
 
-        // Geolocalización
+        // Solicitar GPS al cargar
         window.onload = () => {
             if (navigator.geolocation) {
-                navigator.geolocation.getCurrentPosition((pos) => {
-                    latitud = pos.coords.latitude;
-                    longitud = pos.coords.longitude;
-                }, (err) => console.log("Ubicación no autorizada"));
+                navigator.geolocation.getCurrentPosition(
+                    (pos) => {
+                        latitud = pos.coords.latitude;
+                        longitud = pos.coords.longitude;
+                    },
+                    (err) => {
+                        console.warn("Geolocalización no permitida.");
+                    }
+                );
             }
         };
 
         function calcular() {
             const inputs = document.querySelectorAll('.cant-cerveza');
             let totalUnidades = 0;
-            let esSoloCostenita = true;
-            let haySeleccion = false;
+            let soloCostenita = true;
+            let hayAlgo = false;
 
             inputs.forEach(input => {
                 let val = parseInt(input.value) || 0;
                 totalUnidades += val;
                 
                 if (val > 0) {
-                    haySeleccion = true;
+                    hayAlgo = true;
                     if (input.getAttribute('data-nombre') !== 'Costeñita') {
-                        esSoloCostenita = false;
+                        soloCostenita = false;
                     }
                 }
             });
 
             document.getElementById('contador-total').innerText = `${totalUnidades} Unidades`;
-            document.getElementById('total-precio').innerText = haySeleccion ? "$100.000" : "$0";
+            document.getElementById('total-precio').innerText = hayAlgo ? "$100.000" : "$0";
 
-            return { totalUnidades, esSoloCostenita, haySeleccion };
+            return { totalUnidades, soloCostenita, hayAlgo };
         }
 
         function enviarPedido() {
-            const { totalUnidades, esSoloCostenita, haySeleccion } = calcular();
+            const { totalUnidades, soloCostenita, hayAlgo } = calcular();
             const nombre = document.getElementById('nombre').value;
             const direccion = document.getElementById('direccion').value;
             const celular = document.getElementById('celular').value;
-            const obs = document.getElementById('observaciones').value || "Sin observaciones";
+            const obs = document.getElementById('observaciones').value || "Ninguna";
             const fechaHora = new Date().toLocaleString('es-CO', { timeZone: 'America/Bogota' });
 
             if (!nombre || !direccion || !celular) {
-                alert("⚠️ Por favor completa los datos de entrega.");
+                alert("⚠️ Por favor completa los datos del cliente.");
                 return;
             }
 
-            if (!haySeleccion) {
-                alert("⚠️ Selecciona productos para tu cava.");
+            if (!hayAlgo) {
+                alert("⚠️ Selecciona productos para armar la cava.");
                 return;
             }
 
-            // Validaciones de cantidad
-            if (esSoloCostenita && totalUnidades !== 38) {
-                alert("⚠️ La cava de Costeñita debe tener exactamente 38 unidades.");
+            // Validación de cantidades según reglas de negocio
+            if (soloCostenita && totalUnidades !== 38) {
+                alert("⚠️ La cava de Costeñita debe ser de exactamente 38 unidades.");
                 return;
-            } else if (!esSoloCostenita && totalUnidades !== 30) {
-                alert("⚠️ La cava debe tener exactamente 30 unidades para esta combinación.");
+            } else if (!soloCostenita && totalUnidades !== 30) {
+                alert("⚠️ Esta combinación de cava debe tener exactamente 30 unidades.");
                 return;
             }
 
-            let detalleProductos = "";
+            // Detalle discriminado de productos
+            let productosTexto = "";
             document.querySelectorAll('.cant-cerveza').forEach(input => {
                 if (input.value > 0) {
-                    detalleProductos += `• ${input.getAttribute('data-nombre')}: ${input.value} und%0A`;
+                    productosTexto += `• ${input.getAttribute('data-nombre')}: ${input.value} und%0A`;
                 }
             });
 
-            const linkGPS = latitud ? `https://www.google.com/maps?q=${latitud},${longitud}` : "No proporcionada";
+            // Validación de Link GPS
+            const ubicacionLink = latitud ? `https://www.google.com/maps?q=${latitud},${longitud}` : "No activada por el cliente";
 
             const mensaje = `*NUEVO PEDIDO - CAVAS JUAN*%0A` +
                 `--------------------------------%0A` +
@@ -168,11 +175,12 @@
                 `📍 *Dirección:* ${direccion}%0A` +
                 `📞 *Celular:* ${celular}%0A` +
                 `📝 *Obs:* ${obs}%0A%0A` +
-                `*DETALLE DE CAVA:*%0A${detalleProductos}%0A` +
+                `*DETALLE DE CAVA:*%0A${productosTexto}%0A` +
                 `*TOTAL A PAGAR:* $100.000%0A` +
                 `*DOMICILIO:* GRATIS%0A%0A` +
-                `📍 *UBICACIÓN:* ${linkGPS}%0A%0A` +
-                `_Desarrollado por Vibras Positivas_`;
+                `📍 *UBICACIÓN GPS:* ${ubicacionLink}%0A%0A` +
+                `_App desarrollada por Vibras Positivas ©_%0A` +
+                `_Derechos de Autor: 3117700431_`;
 
             window.open(`https://api.whatsapp.com/send?phone=573218005278&text=${mensaje}`, '_blank');
         }
